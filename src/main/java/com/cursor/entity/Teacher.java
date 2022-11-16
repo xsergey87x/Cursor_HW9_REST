@@ -38,14 +38,12 @@ public class Teacher {
         this.age = age;
     }
 
-    public void addStudentsGroup(StudentsGroup studentsGroup)
-    {
+    public void addStudentsGroup(StudentsGroup studentsGroup) {
         studentsGroups.add(studentsGroup);
         studentsGroup.setTeacher(this);
     }
 
-    public void deleteStudentsGroup(StudentsGroup studentsGroup)
-    {
+    public void deleteStudentsGroup(StudentsGroup studentsGroup) {
         studentsGroups.remove(studentsGroup);
     }
 
