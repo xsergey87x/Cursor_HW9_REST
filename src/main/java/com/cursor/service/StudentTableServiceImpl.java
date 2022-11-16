@@ -14,7 +14,6 @@ import java.util.List;
 @Service
 public class StudentTableServiceImpl implements StudentTableService {
 
-
     private final StudentRepository studentRepository;
     private final TeacherRepository teacherRepository;
 
@@ -23,14 +22,10 @@ public class StudentTableServiceImpl implements StudentTableService {
         this.teacherRepository = teacherRepository;
     }
 
-
     @Override
     public List<Student> getAllStudentByTeacher(Long teacherId) {
-       /// List<StudentsGroup> studentsGroups = new ArrayList<>();
-        List<Student> teacherStudents = new ArrayList<>();
 
-        //studentsGroups = teacherRepository.getReferenceById(teacherId).getStudentsGroups();
-        ///studentsGroups.forEach(studentsGroup -> teacherStudents.addAll(studentsGroup.getStudents()));
+        List<Student> teacherStudents = new ArrayList<>();
         teacherRepository.findById(teacherId).get().getStudentsGroups().forEach(studentsGroup -> teacherStudents.addAll(studentsGroup.getStudents()));
 
         return teacherStudents;
